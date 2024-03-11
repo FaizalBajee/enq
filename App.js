@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import  React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import LoginSreen from './LoginSreen';
+import MainPage from './MainPage';
+import Contact from './Contact';
+import Enquiry from './Home';
+import AddContact from './AddContact';
+import EditContact from './EditContact';
+import Map from './Map';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="log" component={LoginSreen} options={{title: ''}}/>
+        <Stack.Screen name="home" component={MainPage} options={{title: ''}}/>
+        <Stack.Screen name="Enq" component={Enquiry} options={{title: ''}}/>
+        <Stack.Screen name="contact" component={Contact} options={{title: ''}}/>
+        <Stack.Screen name="Add Contact" component={AddContact} options={{title: ''}}/>
+        <Stack.Screen name="Edit Contact" component={EditContact} options={{title: ''}}/> 
+        <Stack.Screen name="map" component={Map} options={{title:''}} /> 
+      </Stack.Navigator>       
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
