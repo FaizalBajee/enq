@@ -1,7 +1,6 @@
 import { Text, View ,StyleSheet,TouchableOpacity,FlatList,TextInput,Alert, Button} from 'react-native'
 import React, { Component } from 'react'
 
-
 export class Enquiry extends Component {
     constructor(){
         super()
@@ -14,7 +13,7 @@ export class Enquiry extends Component {
             dataSource:[],            
         }
     }
-
+//to handle Updates
     handleUpdate=()=>{
       var NAME=this.state.Name;
       var NUMBER=this.state.Number;
